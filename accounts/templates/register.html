@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container register_attempt">
+		<div class="row">
+			<div class="col-sm-12 col-md-12 col-lg-12">
+				<div class="card login-content shadow-lg border-0">
+					<div class="card-body">
+						<div class="text-center">
+							<img class="logo" src="https://cdn3.iconfinder.com/data/icons/galaxy-open-line-gradient-i/200/account-256.png">
+						</div>
+					<h3 class="text-logo">Register form</h3>
+					<br>
+					{% if messages %}
+						{% for message in messages %}
+						<div class="alert alert-info">
+							{{ message }}
+						</div>
+						{% endfor %}
+					{% endif %}
+					<form class="text-center" method="POST">
+						{% csrf_token %}
+						<input class="form-control border-0" type="text" name="username" placeholder="Type Your Username">
+                        <br>
+						<input class="form-control border-0" type="email" name="email" placeholder="Type Your Email">
+						<br>
+						<input class="form-control border-0" type="password" name="password" placeholder="Type Your Password">
+						<br>
+						<button class="btn btn-primary btn-sm border-0 btn-register" type="submit" name="submit">Register now</button>
+					</form>
+					</div>
+					<div class="nomember">
+						<p class="text-center">Already have an account? <a href="{% url 'login_attempt' %}">Login</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<style>
+	.register_attempt{
+
+	}
+</style>
+{% endblock %}

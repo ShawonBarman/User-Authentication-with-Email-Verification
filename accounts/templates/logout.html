@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container-fluid loggedout alert alert-info">
+        <h2>You have been successfully logged out.</h2>
+        <p>Thanks for spending some quality time with the Web site today.</p>
+        <a href="{% url 'login_attempt' %}" style="color: black; font-size: 20px; font-weight: bold; text-decoration: none">Log in again</a>
+    </div>
+{% endblock %}

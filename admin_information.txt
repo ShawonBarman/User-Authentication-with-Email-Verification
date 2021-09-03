@@ -1,0 +1,3 @@
+user_name : emailAuth
+email : email1234@gmail.com
+password : email1234
